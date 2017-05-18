@@ -30,6 +30,7 @@ colnames(dat)<-gsub("_Aligned.sortedByCoord.out.bam","",colnames(dat))
 saveRDS(dat,"novogene_counts.rds")
 
 ###
+dat=readRDS("novogene_counts.rds")
 countData=dat
 design<-data.frame(experiment=colnames(countData[,c(1,6,9,10)]), batch = c("r1","r1","r2","r2"),
                                             condition = c("siC","siK", "siC","siK") )
